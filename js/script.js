@@ -1,6 +1,7 @@
 let playerScore = 0
 let computerScore = 0
-let playerChoice = prompt("What's you choice: Rock, Paper or Scissors?")
+
+
 
 // Function to make the computer returns a random value
 function computerChoice() {
@@ -10,11 +11,15 @@ function computerChoice() {
 
 // Round function that compares the player choice (prompt on page load) to computer random choice
 function playRound(playerSelection, computerSelection) {
+    
     computerSelection = computerChoice();
-    playerSelection = playerChoice;
+    playerSelection = prompt("What's you choice: Rock, Paper or Scissors?").toLowerCase();
 
     if (playerSelection == computerSelection) {
         console.log('This Round was a tie!');
+
+        console.log("Computer Score: " + computerScore);
+        console.log("Player Score: " + playerScore);
     }
 
     else if ((playerSelection == 'rock' && computerSelection == 'scissors')||
@@ -25,25 +30,34 @@ function playRound(playerSelection, computerSelection) {
 
         console.log(playerSelection + " beats " + computerSelection + "\nYou have WON this round!");
 
-        if (playerScore == 5) {
-            console.log("Congratulations you've WON the GAME!!!")
-        }
+        console.log("Computer Score: " + computerScore);
+        console.log("Player Score: " + playerScore);
     }
 
     else {
 
         computerScore++;
 
-        console.log(playerSelection + " loses to " + computerSelection + "\nYou have LOST this round!")
-        
-        if (computerScore == 5) {
-            console.log("Ow Shoot, you've LOST the GAME!")
-        }
-    
+        console.log(playerSelection + " loses to " + computerSelection + "\nYou have LOST this round!");
+
+        console.log("Computer Score: " + computerScore);
+        console.log("Player Score: " + playerScore);
+
     }
 }
 
-// Prints round result and current score
-console.log(playRound());
-console.log("Computer Score: " + computerScore);
-console.log("Player Score: " + playerScore);
+function playGame() {   
+
+    while (computerScore < 5 || playerScore < 5) {
+        playRound();
+            if (playerScore == 5) {
+                console.log("Congrats! You've WON the GAME!")
+
+            }
+            else if (computerScore == 5) {
+                console.log("Ow Shoot, You've LOST the GAME!")
+
+            }
+        }
+    }
+playGame();
