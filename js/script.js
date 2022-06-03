@@ -53,10 +53,12 @@ function playGame() {
             if (playerScore == 5) {
                 console.log("Congrats! You've WON the GAME!")
 
+                break
             }
             else if (computerScore == 5) {
                 console.log("Ow Shoot, You've LOST the GAME!")
 
+                break
             }
         }
     }
