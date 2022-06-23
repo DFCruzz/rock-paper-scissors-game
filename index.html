@@ -6,13 +6,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
 
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="main-container">
+        <div id="sideMenu" class="side-menu">
+            <div class="rules-title">
+                <span>Rules</span>
+                <span onclick="closeLeft()">X</span>
+            </div>
+            <div class="rules-text">
+                <span>Invented by Sam Kass - RPSLS Game decreases the chance of a tie due to a higher number of outcomes, here are them all!</span>
+            </div>            
+            <div class="rules-content">
+                <img src="https://via.placeholder.com/60x60" alt="">
+                <span> Does something to </span>
+                <img src="https://via.placeholder.com/60x60" alt="">
+            </div>
+            <div class="rules-content">
+                <img src="https://via.placeholder.com/60x60" alt="">
+                <span> Does something to </span>
+                <img src="https://via.placeholder.com/60x60" alt="">
+            </div>
+            <div class="rules-content">
+                <img src="https://via.placeholder.com/60x60" alt="">
+                <span> Does something to </span>
+                <img src="https://via.placeholder.com/60x60" alt="">
+            </div>
+            <div class="rules-content">
+                <img src="https://via.placeholder.com/60x60" alt="">
+                <span> Does something to </span>
+                <img src="https://via.placeholder.com/60x60" alt="">
+            </div>
+            <div class="rules-content">
+                <img src="https://via.placeholder.com/60x60" alt="">
+                <span> Does something to </span>
+                <img src="https://via.placeholder.com/60x60" alt="">
+            </div>
+            <div class="rules-content">
+                <img src="https://via.placeholder.com/60x60" alt="">
+                <span> Does something to </span>
+                <img src="https://via.placeholder.com/60x60" alt="">
+            </div>
+            <div class="rules-content">
+                <img src="https://via.placeholder.com/60x60" alt="">
+                <span> Does something to </span>
+                <img src="https://via.placeholder.com/60x60" alt="">
+            </div>
+            <div class="rules-content">
+                <img src="https://via.placeholder.com/60x60" alt="">
+                <span> Does something to </span>
+                <img src="https://via.placeholder.com/60x60" alt="">
+            </div>
+            <div class="rules-content">
+                <img src="https://via.placeholder.com/60x60" alt="">
+                <span> Does something to </span>
+                <img src="https://via.placeholder.com/60x60" alt="">
+            </div>
+            <div class="rules-content">
+                <img src="https://via.placeholder.com/60x60" alt="">
+                <span> Does something to </span>
+                <img src="https://via.placeholder.com/60x60" alt="">
+            </div>
+        </div>
+        <div id="gameDiv" class="game-container">
+            <div class="header">
+                <h1>Rock Paper Scissors...</h1>
+                <h1>Lizard Spock</h1> 
+                <div class="sub-header">
+                    <span onclick="openLeft()">Rules</span>
+                    <span>About</span>
+                </div>
+            </div>
+            <div class="round-container">
+                <div class="game-screen">
+                    <div class="player-screen">
+                        <div id="playerScoreText" class="player-score">
+                            <p>Player Score: 0</p>
+                        </div>
+                        <div class="choice-box">
+                            <div class="player-choice">
+                                <img src="" alt="">
+                            </div>
+                        </div>                                                        
+                    </div>
+                    <div class="computer-screen">
+                        <div id="computerScoreText" class="computer-score">
+                            <p>Computer Score: 0</p>
+                        </div>
+                        <div class="choice-box">
+                            <div class="computer-choice">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 id="roundMsg" class="round-message">Game of 5! Let the Duel BEGIN!</h3>
+            </div>
+            <div class="btn-container">
+                <button class="btn-rock btn" data-choice="rock">
+                    <img src="./img/Rock.png" alt="">
+                </button>
+                <button class="btn-paper btn" data-choice="paper">
+                    <img src="./img/Paper.png" alt="">
+                </button>
+                <button class="btn-scissors btn" data-choice="scissors">
+                    <img src="./img/Scissors.png" alt="">
+                </button>
+                <button class="btn-lizard btn" data-choice="lizard">
+                    <img src="./img/Lizard.png" alt="">
+                </button>
+                <button class="btn-spock btn" data-choice="spock">
+                    <img src="./img/Spock.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="endgame-overlay" id="endOverlay"></div>
+    <div class="endgame-box" id="endBox">
+        <h1 class="endbox-title" id="endTitle"></h1>
+        <p class="endbox-msg" id="endMsg"></p>
+        <button class="btn-restart" id="btnRestart" onclick="restartGame()">Play Again</button>
+    </div>
+    <footer id="footer" class="footer-container">
+        Diego Cruz <span>©</span>, 2022
+    </footer>
 </body>
-</body>
-</body>
+
+<script src="./js/newscript.js"></script>
 </html>

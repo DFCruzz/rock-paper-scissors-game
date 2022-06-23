@@ -1,0 +1,201 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    height: 100vh;
+}
+
+.main-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-container {
+    background-color: #fff;
+}
+
+.side-menu {
+    background-color: #ffffff;    
+    display: flex;
+    flex-direction: column;
+    width: 0px;
+    position: fixed;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.rules-title {
+    padding: 12px 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rules-text {
+    min-width: 350px;
+    padding: 12px 12px;
+}
+
+.rules-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 350px;
+    padding: 12px 12px;
+}
+
+.rules-content span {
+    padding: 0px 5px;
+}
+
+.game-container {
+    transition: 0.5s;
+}
+
+.header {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 140px;
+    background-color: #19102e;
+    font-family: 'Orbitron', sans-serif;
+    color: #f8993a;
+}
+
+.sub-header {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.round-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.game-screen {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 200px;    
+}
+
+
+.player-screen, .computer-screen {
+    text-align: center;
+}
+
+.player-score, .computer-score {
+    padding-bottom: 12px;
+}
+
+.choice-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    border: 10px solid black;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.btn-container button {
+    width: 120px;
+    height: 120px;
+    border: none;
+    border-radius: 50%;
+}
+
+.btn-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.footer-container {
+    position: fixed;
+}
+
+.endgame-overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0,0,0,.4);
+}
+
+.endgame-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 300px;
+    height: 200px;
+    transform: translate(-50%, -50%)scale(0);
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transition: 0.5s ease-in-out;
+}
+
+.activate-overlay {
+    display: block;
+}
+
+.activate-endbox {
+    transform: translate(-50%, -50%)scale(1);
+}
+
+
+/* Single Buttons Customization and Hover Effects */
+
+.btn-rock:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px #b42313;
+    transform: scale(1.2);
+    transition: 0.1s ease-in-out;
+}
+
+.btn-paper:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px #f4c047;
+    transform: scale(1.2);
+    transition: 0.1s ease-in-out;
+}
+
+.btn-scissors:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px #8f1767;
+    transform: scale(1.2);
+    transition: 0.1s ease-in-out;
+}
+
+.btn-lizard:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px #57c52b;
+    transform: scale(1.2);
+    transition: 0.1s ease-in-out;
+}
+
+.btn-spock:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px #465be7;
+    transform: scale(1.2);
+    transition: 0.1s ease-in-out;
+}

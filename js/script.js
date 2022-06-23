@@ -9,6 +9,7 @@ function computerChoice() {
     return options[Math.floor(Math.random() * options.length)]
 }
 
+
 // Round function that compares the player choice (prompt on page load) to computer random choice
 function playRound(playerSelection, computerSelection) {
     
@@ -46,7 +47,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function playGame() {   
+function endGame() {   
 
     while (computerScore < 5 || playerScore < 5) {
         playRound();
