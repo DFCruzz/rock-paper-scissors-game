@@ -1,5 +1,15 @@
 // Global Variables
 const playerChoices = document.querySelectorAll(".btn")
+const endTitle = document.getElementById("endTitle")
+const endMsg = document.getElementById("endMsg")
+const btnRestart = document.getElementById("btnRestart")
+const endOverlay = document.getElementById("endOverlay")
+const endBox = document.getElementById("endBox")
+const playerScoreText = document.getElementById("playerScoreText")
+const computerScoreText = document.getElementById("computerScoreText")
+const roundMsg = document.getElementById("roundMsg")
+const playerChoiceImg = document.getElementById("playerChoiceImg")
+const computerChoiceImg = document.getElementById("computerChoiceImg")
 
 let computerScore = 0
 let playerScore = 0
@@ -22,14 +32,34 @@ function closeLeft() {
 }
 
 // Main UI Script
-const endTitle = document.getElementById("endTitle")
-const endMsg = document.getElementById("endMsg")
-const btnRestart = document.getElementById("btnRestart")
-const endOverlay = document.getElementById("endOverlay")
-const endBox = document.getElementById("endBox")
-const playerScoreText = document.getElementById("playerScoreText")
-const computerScoreText = document.getElementById("computerScoreText")
-const roundMsg = document.getElementById("roundMsg")
+function displayChoices(playerSelection, computerSelection) {
+    switch (playerSelection) {
+        case "rock": playerChoiceImg.src = "./img/RockNoBG.png"
+        break
+        case "paper": playerChoiceImg.src = "./img/PaperNoBG.png"
+        break
+        case "scissors": playerChoiceImg.src = "./img/ScissorsNoBG.png"
+        break
+        case "lizard": playerChoiceImg.src = "./img/LizardNoBG.png"
+        break
+        case "spock": playerChoiceImg.src = "./img/SpockNoBG.png"
+        break
+    }
+
+    switch (computerSelection) {
+        case "rock": computerChoiceImg.src = "./img/RockNoBG.png"
+        break
+        case "paper": computerChoiceImg.src = "./img/PaperNoBG.png"
+        break
+        case "scissors": computerChoiceImg.src = "./img/ScissorsNoBG.png"
+        break
+        case "lizard": computerChoiceImg.src = "./img/LizardNoBG.png"
+        break
+        case "spock": computerChoiceImg.src = "./img/SpockNoBG.png"
+        break
+    }
+}
+
 
 function endGame() {
     
@@ -71,7 +101,9 @@ function playRound(playerSelection) {
 
     if (playerSelection == computerSelection) {
 
-        roundMsg.textContent = ("This round was a Tie - Go Again!")
+        roundMsg.textContent = ("This round was a Tie - Go Again!");
+
+        displayChoices(playerSelection, computerSelection);
 
         console.log('This Round was a tie!');
 
@@ -95,6 +127,8 @@ function playRound(playerSelection) {
         roundMsg.textContent = (capitalizeFirstLetter(playerSelection) + " beats " + capitalizeFirstLetter(computerSelection) + "!" + " You have WON this round!");
         playerScoreText.textContent = ("Player Score: " + playerScore);
 
+        displayChoices(playerSelection, computerSelection);
+
         console.log(playerSelection + " beats " + computerSelection + "\nYou have WON this round!");
 
         console.log("Computer Score: " + computerScore);
@@ -112,6 +146,8 @@ function playRound(playerSelection) {
 
         roundMsg.textContent = (capitalizeFirstLetter(playerSelection) + " loses to " + capitalizeFirstLetter(computerSelection) + "!" + " You have LOST this round");
         computerScoreText.textContent = ("Computer Score: " + computerScore);
+
+        displayChoices(playerSelection, computerSelection);
 
         console.log(playerSelection + " loses to " + computerSelection + "\nYou have LOST this round!");
 
