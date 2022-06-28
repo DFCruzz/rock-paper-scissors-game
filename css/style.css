@@ -113,8 +113,7 @@ body {
     transition: 0.5s;
 }
 
-.header {
-    
+.header {    
     display: flex;
     flex-direction: column;
     justify-content: center;

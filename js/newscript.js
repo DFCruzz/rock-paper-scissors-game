@@ -80,7 +80,6 @@ function displayChoices(playerSelection, computerSelection) {
     }
 }
 
-
 function endGame() {
     
     endOverlay.classList.add("activate-overlay");
@@ -125,9 +124,9 @@ function playRound(playerSelection) {
 
         displayChoices(playerSelection, computerSelection);
 
-        playerBox.classList.remove("winner", "loser")
-        computerBox.classList.remove("winner", "loser")
-
+        playerBox.classList.remove("winner", "loser");
+        computerBox.classList.remove("winner", "loser");
+       
         console.log('This Round was a tie!');
 
         console.log("Computer Score: " + computerScore);
@@ -153,11 +152,11 @@ function playRound(playerSelection) {
 
         displayChoices(playerSelection, computerSelection);
 
-        playerBox.classList.remove("winner", "loser")
-        computerBox.classList.remove("winner", "loser")
+        playerBox.classList.remove("winner", "loser");
+        computerBox.classList.remove("winner", "loser");
         playerBox.classList.add("winner");
         computerBox.classList.add("loser");
-
+        
         console.log(playerSelection + " beats " + computerSelection + "\nYou have WON this round!");
 
         console.log("Computer Score: " + computerScore);
@@ -165,7 +164,7 @@ function playRound(playerSelection) {
 
         if (playerScore == 5) {
             console.log("Congrats! You've WON the GAME!");
-            endGame();
+            return endGame();
          }
 
     }
@@ -178,8 +177,8 @@ function playRound(playerSelection) {
 
         displayChoices(playerSelection, computerSelection);
 
-        playerBox.classList.remove("winner", "loser")
-        computerBox.classList.remove("winner", "loser")
+        playerBox.classList.remove("winner", "loser");
+        computerBox.classList.remove("winner", "loser");
         computerBox.classList.add("winner");
         playerBox.classList.add("loser");
 
@@ -190,7 +189,7 @@ function playRound(playerSelection) {
 
         if (computerScore == 5) {
             console.log("Ow Shoot, You've LOST the GAME!");
-            endGame();                               
+            return endGame();                               
         }
     }
 }

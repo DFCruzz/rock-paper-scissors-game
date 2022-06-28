@@ -64,3 +64,21 @@ function endGame() {
         }
     }
 playGame();
+
+
+
+playerBox.classList.remove("winner", "loser");
+computerBox.classList.remove("winner", "loser");
+
+
+        playerBox.classList.remove("winner", "loser");
+        computerBox.classList.remove("winner", "loser");
+        playerBox.classList.add("winner");
+        computerBox.classList.add("loser");
+
+
+
+        playerBox.classList.remove("winner", "loser");
+        computerBox.classList.remove("winner", "loser");
+        computerBox.classList.add("winner");
+        playerBox.classList.add("loser");
