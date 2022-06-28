@@ -16,29 +16,67 @@ body {
     flex-direction: column;
 }
 
+.btn-container, .main-container, .round-container {
+    background-color: #ffe8fa;
+}
+
 .game-container {
     background-color: #fff;
 }
 
-.side-menu {
-    background-color: #ffffff;    
+.left-side-menu {
+    height: 100vh;
+    background-color: #ffe8fa;    
     display: flex;
     flex-direction: column;
     width: 0px;
     position: fixed;
     overflow-x: hidden;
+    z-index: 1;
+    font-family: 'Roboto', sans-serif;
     transition: 0.5s;
 }
 
-.rules-title {
+.right-side-menu {
+    height: 100vh;
+    background-color: #ffe8fa;    
+    display: flex;
+    flex-direction: column;
+    left: 100%;
+    transform: translate(-100%, 0%);
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.5s;
+}
+
+
+
+.rules-title, .about-title {
     padding: 12px 12px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.2em;
 }
 
-.rules-text {
+.rules-text, .about-text {
     min-width: 350px;
     padding: 12px 12px;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 500;
+}
+
+.about-text span {
+    padding-bottom: 20px;
 }
 
 .rules-content {
@@ -53,12 +91,29 @@ body {
     padding: 0px 5px;
 }
 
+.rules-content img {
+    width: 60px;
+    height: 60px;
+}
+
+.open-side-menu {
+    cursor: pointer;
+}
+
+.close-side-menu {
+    background-color: #280b26;
+    color: #f4c047;
+    padding: 5px 8px;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
 .game-container {
     transition: 0.5s;
 }
 
 .header {
-    margin-bottom: 50px;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,9 +121,9 @@ body {
     text-align: center;
     width: 100%;
     height: 140px;
-    background-color: #19102e;
+    background-color: #280b26;
     font-family: 'Orbitron', sans-serif;
-    color: #f8993a;
+    color: #f4c047;
 }
 
 .sub-header {
@@ -81,9 +136,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
 }
-
 .game-screen {
     display: flex;
     margin-bottom: 30px;
@@ -97,15 +153,27 @@ body {
 
 .player-score, .computer-score {
     padding-bottom: 12px;
+    font-size: 20px;
+    font-weight: 500;
 }
 
-.choice-box {
+.computer-box, .player-box {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 200px;
     height: 300px;
-    border: 10px solid black;
+    border: 8px solid #280b26;
+    border-radius: 2rem;
+    transition: 0.3s;
+}
+
+.winner {
+    border: 8px solid #a9ff92;
+}
+
+.loser {
+    border: 8px solid #ff6464;
 }
 
 .btn-container {
@@ -128,7 +196,19 @@ body {
 }
 
 .footer-container {
+    display: flex;
     position: fixed;
+    background-color: #280b26;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.4rem;
+    color: #f4c047;
+    transition: 0.5s;
 }
 
 .endgame-overlay {
@@ -139,11 +219,13 @@ body {
     left: 0;
     position: fixed;
     background-color: rgba(0,0,0,.4);
+    z-index: 2;
 }
 
 .endgame-box {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: #fff;
     width: 300px;
     height: 200px;
@@ -151,7 +233,34 @@ body {
     top: 50%;
     left: 50%;
     position: fixed;
+    text-align: center;
     transition: 0.5s ease-in-out;
+    border: 3px solid #280b26;
+    border-radius: 1rem;
+    z-index: 3;
+}
+
+.endgame-box h1 {
+    font-family: 'Orbitron', sans-serif;
+    padding-top: 20px;
+    letter-spacing: 0.1em;
+}
+
+.endgame-box p {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px 0px;
+}
+
+.endgame-box button {
+    background-color: #280b26;
+    color: #f4c047;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.2em;
+    width: 150px;
+    height: 32px;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
 }
 
 .activate-overlay {

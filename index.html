@@ -15,63 +15,79 @@
 </head>
 <body>
     <div class="main-container">
-        <div id="sideMenu" class="side-menu">
+        <div id="leftSideMenu" class="left-side-menu">
             <div class="rules-title">
                 <span>Rules</span>
-                <span onclick="closeLeft()">X</span>
+                <span class="close-side-menu" onclick="closeLeft()">X</span>
             </div>
             <div class="rules-text">
                 <span>Invented by Sam Kass - RPSLS Game decreases the chance of a tie due to a higher number of outcomes, here are them all!</span>
             </div>            
             <div class="rules-content">
-                <img src="https://via.placeholder.com/60x60" alt="">
-                <span> Does something to </span>
-                <img src="https://via.placeholder.com/60x60" alt="">
+                <img src="./img/ScissorsNoBG.png" alt="">
+                <span> Cuts </span>
+                <img src="./img/PaperNoBG.png" alt="">
             </div>
             <div class="rules-content">
-                <img src="https://via.placeholder.com/60x60" alt="">
-                <span> Does something to </span>
-                <img src="https://via.placeholder.com/60x60" alt="">
+                <img src="./img/PaperNoBG.png" alt="">
+                <span> Covers </span>
+                <img src="./img/RockNoBG.png" alt="">
             </div>
             <div class="rules-content">
-                <img src="https://via.placeholder.com/60x60" alt="">
-                <span> Does something to </span>
-                <img src="https://via.placeholder.com/60x60" alt="">
+                <img src="./img/RockNoBG.png" alt="">
+                <span> Crushes </span>
+                <img src="./img/LizardNoBG.png" alt="">
             </div>
             <div class="rules-content">
-                <img src="https://via.placeholder.com/60x60" alt="">
-                <span> Does something to </span>
-                <img src="https://via.placeholder.com/60x60" alt="">
+                <img src="./img/LizardNoBG.png" alt="">
+                <span> Poisons </span>
+                <img src="./img/SpockNoBG.png" alt="">
             </div>
             <div class="rules-content">
-                <img src="https://via.placeholder.com/60x60" alt="">
-                <span> Does something to </span>
-                <img src="https://via.placeholder.com/60x60" alt="">
+                <img src="./img/SpockNoBG.png" alt="">
+                <span> Smashes </span>
+                <img src="./img/ScissorsNoBG.png" alt="">
             </div>
             <div class="rules-content">
-                <img src="https://via.placeholder.com/60x60" alt="">
-                <span> Does something to </span>
-                <img src="https://via.placeholder.com/60x60" alt="">
+                <img src="./img/ScissorsNoBG.png" alt="">
+                <span> Decapitates </span>
+                <img src="./img/LizardNoBG.png" alt="">
             </div>
             <div class="rules-content">
-                <img src="https://via.placeholder.com/60x60" alt="">
-                <span> Does something to </span>
-                <img src="https://via.placeholder.com/60x60" alt="">
+                <img src="./img/LizardNoBG.png" alt="">
+                <span> Eats </span>
+                <img src="./img/PaperNoBG.png" alt="">
             </div>
             <div class="rules-content">
-                <img src="https://via.placeholder.com/60x60" alt="">
-                <span> Does something to </span>
-                <img src="https://via.placeholder.com/60x60" alt="">
+                <img src="./img/PaperNoBG.png" alt="">
+                <span> Disproves </span>
+                <img src="./img/SpockNoBG.png" alt="">
             </div>
             <div class="rules-content">
-                <img src="https://via.placeholder.com/60x60" alt="">
-                <span> Does something to </span>
-                <img src="https://via.placeholder.com/60x60" alt="">
+                <img src="./img/SpockNoBG.png" alt="">
+                <span> Vaporizes </span>
+                <img src="./img/RockNoBG.png" alt="">
             </div>
             <div class="rules-content">
-                <img src="https://via.placeholder.com/60x60" alt="">
-                <span> Does something to </span>
-                <img src="https://via.placeholder.com/60x60" alt="">
+                <span> And as it always has </span>
+            </div>
+            <div class="rules-content">
+                <img src="./img/RockNoBG.png" alt="">
+                <span> Crushes </span>
+                <img src="./img/ScissorsNoBG.png" alt="">
+            </div>
+        </div>
+        <div id="rightSideMenu" class="right-side-menu">
+            <div class="about-title">
+                <span class="close-side-menu" onclick="closeRight()">X</span>
+                <span>About</span>
+            </div>
+            <div class="about-text">
+                <span>This Website was created By Diego Cruz <span>@DFCruzz <i class="fa-brands fa-github"></i></span></span>
+                <span>Project developed using Javascript, HTML and CSS for The Odin Project - Rock, Paper Scissors Lesson</span>
+                <span>Images was taken from <span>"The Big Bang Theory Wiki Page"</span></span>
+                <span>Feel Free to reach me at my Discord</span>
+                <span><i class="fa-brands fa-discord"></i> DFCross#5752</span>
             </div>
         </div>
         <div id="gameDiv" class="game-container">
@@ -79,8 +95,8 @@
                 <h1>Rock Paper Scissors...</h1>
                 <h1>Lizard Spock</h1> 
                 <div class="sub-header">
-                    <span onclick="openLeft()">Rules</span>
-                    <span>About</span>
+                    <span class="open-side-menu" onclick="openLeft()">Rules</span>
+                    <span class="open-side-menu" onclick="openRight()">About</span>
                 </div>
             </div>
             <div class="round-container">
@@ -89,9 +105,9 @@
                         <div id="playerScoreText" class="player-score">
                             <p>Player Score: 0</p>
                         </div>
-                        <div class="choice-box">
+                        <div class="player-box" id="playerBox">
                             <div class="player-choice">
-                                <img id="playerChoiceImg" src="" alt="">
+                                <img id="playerChoiceImg" src="./img/QuestionMark.png" alt="">
                             </div>
                         </div>                                                        
                     </div>
@@ -99,9 +115,9 @@
                         <div id="computerScoreText" class="computer-score">
                             <p>Computer Score: 0</p>
                         </div>
-                        <div class="choice-box">
+                        <div class="computer-box" id="computerBox">
                             <div class="computer-choice">
-                                <img id="computerChoiceImg" src="" alt="">
+                                <img id="computerChoiceImg" src="./img/QuestionMark.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -134,9 +150,10 @@
         <button class="btn-restart" id="btnRestart" onclick="restartGame()">Play Again</button>
     </div>
     <footer id="footer" class="footer-container">
-        Diego Cruz <span>©</span>, 2022
+        <span>Diego Cruz ©, 2022</span>
     </footer>
 </body>
 
 <script src="./js/newscript.js"></script>
+<script src="https://kit.fontawesome.com/42a39329e3.js" crossorigin="anonymous"></script>
 </html>

@@ -10,25 +10,45 @@ const computerScoreText = document.getElementById("computerScoreText")
 const roundMsg = document.getElementById("roundMsg")
 const playerChoiceImg = document.getElementById("playerChoiceImg")
 const computerChoiceImg = document.getElementById("computerChoiceImg")
+const playerBox = document.getElementById("playerBox")
+const computerBox = document.getElementById("computerBox")
 
 let computerScore = 0
 let playerScore = 0
 
 
-// Side Menu Script
+// Side Menus Script
+const leftSideMenu = document.getElementById("leftSideMenu")
+const rightSideMenu = document.getElementById("rightSideMenu")
+const gameDiv = document.getElementById("gameDiv")
+const footer = document.getElementById("footer")
+
 
 function openLeft() {
-    document.getElementById(sideMenu);
-    document.getElementById(gameDiv);
-    sideMenu.style.width = "350px";
+    leftSideMenu.style.width = "350px";
+    rightSideMenu.style.width = "0px";
     gameDiv.style.marginLeft = "350px";
+    footer.style.marginLeft = "350px";
+    return closeRight();   
 }
 
 function closeLeft() {
-    document.getElementById(sideMenu);
-    document.getElementById(gameDiv);
-    sideMenu.style.width="0px"
+    leftSideMenu.style.width="0px"
     gameDiv.style.marginLeft = "0px";
+    footer.style.marginLeft = "0px"
+}
+
+function openRight() {
+    rightSideMenu.style.width = "350px"
+    gameDiv.style.marginRight = "350px";
+    footer.style.marginRight = "350px";
+    return closeLeft();
+}
+
+function closeRight() {
+    rightSideMenu.style.width = "0px"
+    gameDiv.style.marginRight = "0px";
+    footer.style.marginRight = "0px";
 }
 
 // Main UI Script
@@ -105,6 +125,9 @@ function playRound(playerSelection) {
 
         displayChoices(playerSelection, computerSelection);
 
+        playerBox.classList.remove("winner", "loser")
+        computerBox.classList.remove("winner", "loser")
+
         console.log('This Round was a tie!');
 
         console.log("Computer Score: " + computerScore);
@@ -124,10 +147,16 @@ function playRound(playerSelection) {
 
         playerScore++;
         
+
         roundMsg.textContent = (capitalizeFirstLetter(playerSelection) + " beats " + capitalizeFirstLetter(computerSelection) + "!" + " You have WON this round!");
         playerScoreText.textContent = ("Player Score: " + playerScore);
 
         displayChoices(playerSelection, computerSelection);
+
+        playerBox.classList.remove("winner", "loser")
+        computerBox.classList.remove("winner", "loser")
+        playerBox.classList.add("winner");
+        computerBox.classList.add("loser");
 
         console.log(playerSelection + " beats " + computerSelection + "\nYou have WON this round!");
 
@@ -148,6 +177,11 @@ function playRound(playerSelection) {
         computerScoreText.textContent = ("Computer Score: " + computerScore);
 
         displayChoices(playerSelection, computerSelection);
+
+        playerBox.classList.remove("winner", "loser")
+        computerBox.classList.remove("winner", "loser")
+        computerBox.classList.add("winner");
+        playerBox.classList.add("loser");
 
         console.log(playerSelection + " loses to " + computerSelection + "\nYou have LOST this round!");
 
